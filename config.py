@@ -60,7 +60,9 @@ guild_whitelist = [server_id]  # ReSwitched discord
 # Named roles to be used with .approve and .revoke
 # Example: .approve User hacker
 named_roles = {
-    "basicperms": 797032376055758888
+    "basicperms": 797032376055758888,
+    "sysop": 797032189526540308,
+    "autopatrolled": 797032137336422421
 }
 
 # The bot manager and staff roles
