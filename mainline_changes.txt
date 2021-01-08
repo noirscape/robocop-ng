@@ -1,0 +1,19 @@
+Config.py changes:
+- Disabled err, meme, invites, legacy, links, yubicootp, verification.
+- Disabled namedroles
+- Minimum age check set to epoch, meaning it never triggers
+- Suspect words emptied
+- Removed blocks related to links, verification, mod_reswitched, yubicootp.
+- Enabled cogs.sar
+- Moved token to secure.py
+
+Basic changes:
+- removed community count, hex, dec, hackercount and renamed robocop to detrius
+
+Checks:
+- Bot_Manager_ID now evals to bot user owner, not to a role.
+- Check_if_bot_cmds just checks if its in the bot channel
+
+Mod:
+- Changed way rules are linked in warnings to a channel.
+- Approve and revoke now prefer basicperms instead of community.

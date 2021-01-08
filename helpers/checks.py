@@ -10,7 +10,7 @@ def check_if_staff(ctx):
 def check_if_bot_manager(ctx):
     if not ctx.guild:
         return False
-    return any(r.id == config.bot_manager_role_id for r in ctx.author.roles)
+    return ctx.author.id == config.bot_manager_role_id
 
 
 def check_if_staff_or_ot(ctx):
@@ -21,6 +21,8 @@ def check_if_staff_or_ot(ctx):
     is_staff = any(r.id in config.staff_role_ids for r in ctx.author.roles)
     return is_ot or is_staff or is_bot_cmds
 
+def check_if_bot_cmds(ctx):
+    return ctx.channel.name == "bot-cmds"
 
 def check_if_collaborator(ctx):
     if not ctx.guild:

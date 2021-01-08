@@ -14,48 +14,17 @@ class Basic(Cog):
         """Says hello. Duh."""
         await ctx.send(f"Hello {ctx.author.mention}!")
 
-    @commands.cooldown(1, 10, type=commands.BucketType.user)
-    @commands.command(name="hex")
-    async def _hex(self, ctx, num: int):
-        """Converts base 10 to 16 (for emummc sector calculation)"""
-        hex_val = hex(num).upper().replace("0X", "0x")
-        await ctx.send(f"{ctx.author.mention}: {hex_val}")
-
-    @commands.cooldown(1, 10, type=commands.BucketType.user)
-    @commands.command(name="dec")
-    async def _dec(self, ctx, num):
-        """Converts base 10 to 16"""
-        await ctx.send(f"{ctx.author.mention}: {int(num, 16)}")
-
-    @commands.guild_only()
-    @commands.command()
-    async def communitycount(self, ctx):
-        """Prints the community member count of the server."""
-        community = ctx.guild.get_role(config.named_roles["community"])
-        await ctx.send(
-            f"{ctx.guild.name} has " f"{len(community.members)} community members!"
-        )
-
-    @commands.guild_only()
-    @commands.command()
-    async def hackercount(self, ctx):
-        """Prints the hacker member count of the server."""
-        h4x0r = ctx.guild.get_role(config.named_roles["hacker"])
-        await ctx.send(
-            f"{ctx.guild.name} has " f"{len(h4x0r.members)} people with hacker role!"
-        )
-
     @commands.guild_only()
     @commands.command()
     async def membercount(self, ctx):
         """Prints the member count of the server."""
         await ctx.send(f"{ctx.guild.name} has " f"{ctx.guild.member_count} members!")
 
-    @commands.command(aliases=["robocopng", "robocop-ng"])
-    async def robocop(self, ctx):
+    @commands.command()
+    async def detrius(self, ctx):
         """Shows a quick embed with bot info."""
         embed = discord.Embed(
-            title="Robocop-NG", url=config.source_url, description=config.embed_desc
+            title="Detrius", url=config.source_url, description=config.embed_desc
         )
 
         embed.set_thumbnail(url=self.bot.user.avatar_url)

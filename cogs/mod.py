@@ -366,8 +366,8 @@ class Mod(Cog):
     @commands.guild_only()
     @commands.check(check_if_staff)
     @commands.command()
-    async def approve(self, ctx, target: discord.Member, role: str = "community"):
-        """Add a role to a user (default: community), staff only."""
+    async def approve(self, ctx, target: discord.Member, role: str = "basicperms"):
+        """Add a role to a user (default: basicperms), staff only."""
         if role not in config.named_roles:
             return await ctx.send(
                 "No such role! Available roles: " + ",".join(config.named_roles)
@@ -392,8 +392,8 @@ class Mod(Cog):
     @commands.guild_only()
     @commands.check(check_if_staff)
     @commands.command(aliases=["unapprove"])
-    async def revoke(self, ctx, target: discord.Member, role: str = "community"):
-        """Remove a role from a user (default: community), staff only."""
+    async def revoke(self, ctx, target: discord.Member, role: str = "basicperms"):
+        """Remove a role from a user (default: basicperms), staff only."""
         if role not in config.named_roles:
             return await ctx.send(
                 "No such role! Available roles: " + ",".join(config.named_roles)
@@ -463,7 +463,7 @@ class Mod(Cog):
         if reason:
             msg += " The given reason is: " + reason
         msg += (
-            f"\n\nPlease read the rules in {config.rules_url}. "
+            f"\n\nPlease read the rules in <#{config.rules_channel}>. "
             f"This is warn #{warn_count}."
         )
         if warn_count == 2:

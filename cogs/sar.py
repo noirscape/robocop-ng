@@ -1,7 +1,7 @@
 import config
 from discord.ext import commands
 from discord.ext.commands import Cog
-from helpers.checks import check_if_staff_or_ot
+from helpers.checks import check_if_bot_cmds
 
 
 class SAR(Cog):
@@ -10,7 +10,7 @@ class SAR(Cog):
 
     @commands.guild_only()
     @commands.command()
-    @commands.check(check_if_staff_or_ot)
+    @commands.check(check_if_bot_cmds)
     async def sar(self, ctx):
         """Lists self assignable roles."""
         return await ctx.send(
@@ -22,7 +22,7 @@ class SAR(Cog):
     @commands.cooldown(1, 30, type=commands.BucketType.user)
     @commands.guild_only()
     @commands.command(aliases=["iamnot"])
-    @commands.check(check_if_staff_or_ot)
+    @commands.check(check_if_bot_cmds)
     async def iam(self, ctx, role: str):
         """Gets you a self assignable role."""
         if role not in config.self_assignable_roles:

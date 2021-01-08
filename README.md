@@ -1,4 +1,10 @@
-# robocop-ng
+# Detrius
+
+A fork of robocop-ng for the rationalwiki support chat with some features removed that aren't needed.
+
+Robocop readme is provided below.
+
+## robocop-ng
 
 Next-gen rewrite of Kurisu/Robocop bot used on ReSwitched bot with discord.py rewrite, designed to be relatively clean, consistent and un-bloated.
 
