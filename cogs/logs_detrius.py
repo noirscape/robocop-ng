@@ -84,6 +84,7 @@ class Logs(Cog):
             invite_used = "One of: "
             invite_used += ", ".join([x["code"] for x in probable_invites_used])
 
+        age = member.joined_at - member.created_at
         msg = (
             f"✅ **Join**: {member.mention} | "
             f"{escaped_name}\n"
