@@ -26,14 +26,14 @@ embed_desc = (
 initial_cogs = [
     "cogs.common",
     "cogs.admin",
-    "cogs.mod",
+    "cogs.mod_detrius",
     "cogs.mod_note",
     "cogs.mod_reacts",
     "cogs.mod_userlog",
     "cogs.mod_timed",
     "cogs.mod_watch",
-    "cogs.basic",
-    "cogs.logs",
+    "cogs.basic_detrius",
+    "cogs.logs_detrius",
     "cogs.lockdown",
     "cogs.remind",
     "cogs.robocronp",
@@ -55,7 +55,7 @@ initial_cogs = [
 min_age = datetime.datetime.fromtimestamp(0)
 
 # The bot will only work in these guilds
-guild_whitelist = [server_id]  # ReSwitched discord
+guild_whitelist = [server_id]  # RW Support Chat
 
 # Named roles to be used with .approve and .revoke
 # Example: .approve User hacker
@@ -65,10 +65,10 @@ named_roles = {
     "autopatrolled": 797032137336422421
 }
 
-# The bot manager and staff roles
+# The bot manager user and staff user
 # Bot manager can run eval, exit and other destructive commands
 # Staff can run administrative commands
-bot_manager_role_id = 126747960972279808  # Bot management role in ReSwitched
+bot_manager_role_id = 126747960972279808  # Bot management user
 staff_role_ids = [
     797032320409534465, # SuperOP
     797040379266465802, # OP
@@ -96,6 +96,7 @@ general_channels = [
     797046032339959838, # wiki-projects
     797046087873462292, # server-matters
     797050407524237352, # votes
+    797200480509624342, # bot-cmds
 ]  # Channels everyone can access
 
 # Controls which roles are blocked during lockdown
@@ -158,5 +159,6 @@ allowed_pin_roles = []
 self_assignable_roles = {
     "he": 797032987601534987,
     "she": 797033034506567730,
-    "they": 797033050395115590
+    "they": 797033050395115590,
+    "logs": 799580192293126185
 }

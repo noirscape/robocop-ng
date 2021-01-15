@@ -1,7 +1,6 @@
 Config.py changes:
 - Disabled err, meme, invites, legacy, links, yubicootp, verification.
 - Disabled namedroles
-- Minimum age check set to epoch, meaning it never triggers
 - Suspect words emptied
 - Removed blocks related to links, verification, mod_reswitched, yubicootp.
 - Enabled cogs.sar
@@ -17,3 +16,6 @@ Checks:
 Mod:
 - Changed way rules are linked in warnings to a channel.
 - Approve and revoke now prefer basicperms instead of community.
+
+Logs:
+- Account age check removed
